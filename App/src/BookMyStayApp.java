@@ -1,39 +1,54 @@
 /**
  * MAIN CLASS - BookMyStayApp
  *
- * Use Case 1: Application Entry & Welcome Message
+ * Use Case 3: Centralized Room Inventory Management
  *
  * Description:
- * This class represents the entry point of the
- * Hotel Booking Management System.
+ * This class demonstrates how room availability
+ * is managed using a centralized inventory.
  *
- * At this stage, the application:
- * - Starts execution from the main() method
- * - Displays a welcome message to the user
- * - Confirms that the system has started successfully
+ * Room objects are used to retrieve pricing
+ * and room characteristics.
  *
- * No business logic, data structures, or user input
- * is implemented in this use case.
+ * No booking or search logic is introduced here.
  *
- * The goal is to establish a clear and predictable
- * application startup point.
- *
- * @author Developer
- * @version 1.0
+ * @version 3.1
  */
 public class BookMyStayApp {
 
     /**
      * Application entry point.
      *
-     * This method is the first method executed
-     * when the program is launched by the JVM.
-     *
      * @param args Command-line arguments
      */
     public static void main(String[] args) {
 
-        System.out.println("Welcome to the Hotel Booking Management System");
-        System.out.println("System initialized successfully.");
+        System.out.println("Hotel Room Inventory Status\n");
+
+        // Create room objects
+        Room singleRoom = new SingleRoom();
+        Room doubleRoom = new DoubleRoom();
+        Room suiteRoom = new SuiteRoom();
+
+        // Initialize inventory
+        RoomInventory inventory = new RoomInventory();
+
+        // Display Single Room
+        System.out.println("Single Room:");
+        singleRoom.displayRoomDetails();
+        System.out.println("Available Rooms: " +
+                inventory.getRoomAvailability().get("Single Room") + "\n");
+
+        // Display Double Room
+        System.out.println("Double Room:");
+        doubleRoom.displayRoomDetails();
+        System.out.println("Available Rooms: " +
+                inventory.getRoomAvailability().get("Double Room") + "\n");
+
+        // Display Suite Room
+        System.out.println("Suite Room:");
+        suiteRoom.displayRoomDetails();
+        System.out.println("Available Rooms: " +
+                inventory.getRoomAvailability().get("Suite Room"));
     }
 }
