@@ -18,7 +18,7 @@
  * The goal is to establish a clear and predictable
  * application startup point.
  *
- * @author Developer
+ * @author Vineet Seth
  * @version 1.0
  */
 public class BookMyStayApp {
