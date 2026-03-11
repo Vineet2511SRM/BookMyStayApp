@@ -19,8 +19,8 @@ public class BookMyStayApp {
 
         System.out.println("Room Allocation Processing\n");
 
-        // Initialize inventory
-        RoomInventory inventory = new RoomInventory();
+        // Initialize booking queue
+        BookingRequestQueue bookingQueue = new BookingRequestQueue();
 
         // Initialize booking queue
         BookingRequestQueue bookingQueue = new BookingRequestQueue();
