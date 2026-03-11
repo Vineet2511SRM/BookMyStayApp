@@ -1,39 +1,44 @@
 /**
  * MAIN CLASS - BookMyStayApp
  *
- * Use Case 1: Application Entry & Welcome Message
+ * Use Case 4: Room Search & Availability Check
  *
  * Description:
- * This class represents the entry point of the
- * Hotel Booking Management System.
+ * This class demonstrates how guests
+ * can view available rooms without
+ * modifying inventory data.
  *
- * At this stage, the application:
- * - Starts execution from the main() method
- * - Displays a welcome message to the user
- * - Confirms that the system has started successfully
+ * The system enforces read-only access
+ * by design and usage discipline.
  *
- * No business logic, data structures, or user input
- * is implemented in this use case.
- *
- * The goal is to establish a clear and predictable
- * application startup point.
- *
- * @author Developer
- * @version 1.0
+ * @version 4.0
  */
 public class BookMyStayApp {
 
     /**
      * Application entry point.
      *
-     * This method is the first method executed
-     * when the program is launched by the JVM.
-     *
      * @param args Command-line arguments
      */
     public static void main(String[] args) {
 
-        System.out.println("Welcome to the Hotel Booking Management System");
-        System.out.println("System initialized successfully.");
+        // Create room objects
+        Room singleRoom = new SingleRoom();
+        Room doubleRoom = new DoubleRoom();
+        Room suiteRoom = new SuiteRoom();
+
+        // Initialize inventory
+        RoomInventory inventory = new RoomInventory();
+
+        // Initialize search service
+        RoomSearchService searchService = new RoomSearchService();
+
+        // Perform room search
+        searchService.searchAvailableRooms(
+                inventory,
+                singleRoom,
+                doubleRoom,
+                suiteRoom
+        );
     }
 }
